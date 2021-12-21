@@ -4,6 +4,7 @@ import bodyParser from 'body-parser'
 import { createReadStream } from 'fs'
 import crypto from 'crypto'
 import http from 'http'
+import mongo from 'mongoose'
 
 import appSrc from './app.js'
 
@@ -12,7 +13,8 @@ const app = appSrc(
     bodyParser, 
     createReadStream, 
     crypto, 
-    http
+    http,
+    mongo
 );
 
 app.listen(process.env.PORT || 3000)
